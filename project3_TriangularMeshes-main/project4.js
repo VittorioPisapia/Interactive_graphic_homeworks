@@ -47,6 +47,7 @@ class MeshDrawer
 
 		this.aPosition = gl.getAttribLocation(this.prog, "aPosition");
 		this.aTexCoord = gl.getAttribLocation(this.prog, "aTexCoord");
+		this.aNormals = gl.getAttribLocation(this.prog, "aNormals");
 
 		this.umvp = gl.getUniformLocation(this.prog, "umvp");
 		this.uSwapYZ = gl.getUniformLocation(this.prog, "uSwapYZ");
@@ -74,7 +75,7 @@ class MeshDrawer
 	// Similarly, every two consecutive elements in the texCoords array
 	// form the texture coordinate of a vertex.
 	// Note that this method can be called multiple times.
-	setMesh( vertPos, texCoords )
+	setMesh( vertPos, texCoords, normals)
 	{
 		// [TO-DO] Update the contents of the vertex buffer objects.
 		this.numTriangles = vertPos.length / 3;
